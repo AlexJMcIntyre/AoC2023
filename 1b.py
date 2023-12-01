@@ -1,6 +1,4 @@
 f = open("1a_real.txt")
-print(type(f))
-
 r_list = [("one", "o1e"), ("two", "t2o"), ("three", "t3e"), ("four", "f4r"), ("five", "f5e"), ("six", "s6x"), ("seven", "s7n"),
           ("eight", "e8t"), ("nine", "n9e")]
 
