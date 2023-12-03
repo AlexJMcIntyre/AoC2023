@@ -67,7 +67,7 @@ for row in enumerate(grid):
     #  check if we have a part in the buffer at the end of a row:
     if current_number is not None:
         #  add previous number to the record
-        parts.append((current_number, is_connected))
+        parts.append((current_number, is_connected,number_grid_loc, gear_grid_loc))
         #  clear previous number
         current_number = None
         is_connected = False
