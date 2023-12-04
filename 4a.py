@@ -7,6 +7,7 @@ class Scratchcard:
         self.wn = wn
         self.hn = hn
         self.cname = cname
+        self.copies = 0
 
     def __str__(self):
         return self.cname
@@ -17,9 +18,8 @@ class Scratchcard:
         for w in self.wn:
             if w in self.hn:
                 m += 1
-                s = max(1, s*2)
-        return m, s   # matches, score
-
+                s = max(1, s * 2)
+        return s  # score
 
 
 cards = []  # list of cards
@@ -32,9 +32,9 @@ for l in fl:  # load cards into list
     cards.append(Scratchcard(cname=l.split(":")[0].strip(), wn=wnr, hn=hnr))
 
 ans = 0
-for c in cards:
-    res = c.count_matches()
-    print(c.cname + ': ', res[0], res[1])
-    ans += res[1]
+for c in enumerate(cards):
+    res = c[1].count_matches()
+    print(c[1].cname + ': ', res)
+    ans += res
 
 print(ans)
