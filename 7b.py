@@ -15,8 +15,8 @@ class Hand:
         self.strength = 0
         self.non_J_cards = list(filter("J".__ne__, self.cards))
         for c in enumerate(self.non_J_cards):
-            self.strength += self.non_J_cards.count(c[1])  # main s7a_real.txt
-        if len(self.non_J_cards) == 4:
+            self.strength += self.non_J_cards.count(c[1])  # main score
+        if len(self.non_J_cards) == 4:  # update for Jokers
             self.strength = score_4[self.strength]
         elif len(self.non_J_cards) == 3:
             self.strength = score_3[self.strength]
