@@ -38,11 +38,11 @@ for steps in range(64):
             if get_tile(x, y) in ('S', 'O'):
                 if (x - 1) >= 0 and (x - 1, y) not in to_flip:
                     to_flip.append((x - 1, y))
-                if (x + 1) <= width and (x + 1, y) not in to_flip:
+                if (x + 1) <= width - 1 and (x + 1, y) not in to_flip:
                     to_flip.append((x + 1, y))
                 if (y - 1) >= 0 and (x, y - 1) not in to_flip:
                     to_flip.append((x, y - 1))
-                if (y + 1) <= height and (x, y + 1) not in to_flip:
+                if (y + 1) <= height - 1 and (x, y + 1) not in to_flip:
                     to_flip.append((x, y + 1))
                 flip_tile(x, y)
     for f in to_flip:
